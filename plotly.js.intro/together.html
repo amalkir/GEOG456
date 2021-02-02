@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scatter</title>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+</head>
+<h1> Andreina's homework #2</h1>
+<h2> Geography 456</h2>
+
+<body>
+  <div id="myDiv1"></div> 
+  <div id="myTxtDiv"></div>
+  <p> These figures show the number of non-citizens apprehended in the US between 
+    the years indicated,both at the US border by the CBP, and ICE administrative arrests,
+    including ICE EROs and 287g.
+    
+    The data source is: https://www.dhs.gov/immigration-statistics/yearbook/2019/table33
+  </p>
+
+  <div id="myDiv2"></div> 
+    <script src="./data/appre.json"></script>
+<style>
+    body {background-color: whitesmoke;}
+    h1{color:yellowgreen; font-style:normal; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:x-large;}
+    h2{color: yellowgreen;font-style:italic; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger;}
+    #myDiv2 {
+        width: 80%;
+        height: 100%;
+    }
+    #myTxtDiv {
+        width: 50%;
+        height: 100%;
+    }
+    #myDiv1 {
+
+        width: 80%;
+        height: 100%;
+    }
+</style>
+
+    <script>
+        var trace1 = {
+  x: apprehensions.Year,
+  y: apprehensions.Number,
+  mode: 'markers',
+  type: 'scatter',
+  marker: {color:apprehensions.daColor
+}
+};
+
+var layout = {
+  title: {
+    text:'Apprehensions of non-citizens in the US 1925-2019',
+    font: {
+      family: 'Courier New, monospace',
+      size: 30, color: 'orange'
+    }
+}
+}; 
+
+var data = [trace1];
+
+// Plotly.newPlot('myDiv2', data, layout);
+
+        var trace2= {
+  x: apprehensions.Year,
+  y: apprehensions.yConst,
+  mode: 'markers',
+  type: 'bar',
+  marker: {color:apprehensions.daColor,
+    
+}
+};
+
+var data2 = [trace2];
+var layout2 = {
+    title: {text:'Apprehensions of non-citizens in the US 1925-2019',
+    font: {
+      family: 'Courier New, monospace',
+      size: 30, color: 'orange'
+    }
+}
+};
+
+Plotly.newPlot('myDiv1', data, layout);
+Plotly.newPlot('myDiv2', data2,layout2);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scatter</title>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+</head>
+<h1> My homework #2</h1>
+<body>
+    <div><div id="myDiv2"></div> 
+    <script src="./data/appre.json"></script>
+<style>
+    body {background-color: whitesmoke;}
+    h1{color:yellowgreen; font-style:oblique; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:x-large;}
+</style>
+
+    <script>
+        var trace1 = {
+  x: apprehensions.Year,
+  y: apprehensions.Number,
+  mode: 'markers',
+  type: 'scatter',
+  marker: {color:apprehensions.daColor
+}
+};
+
+var layout = {
+  title: {
+    text:'Apprehensions 1925-2019',
+    font: {
+      family: 'Courier New, monospace',
+      size: 30, color: 'orange'
+    }
+}
+};
+
+var data = [trace1];
+
+Plotly.newPlot('myDiv2', data, layout);
+    </script>
+
+</body>
+</html>

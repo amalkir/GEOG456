@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar</title>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+</head>
+
+<style>
+
+    body { 
+        background-color:whitesmoke;
+    }
+    
+    #myDiv {
+        position: absolute;
+        width: 75%;
+        height: 100%;
+    }
+
+    
+    
+</style>
+<body>
+    <h1>Non-citizens apprehended from 1925-2019</h1>
+    <style>
+        h1{text-align: left;
+        color:yellowgreen; font-style:oblique; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:x-large;};
+
+
+    </style>
+    <div><div id="myDiv"></div> 
+    <script src="./data/appre.json"></script>
+
+
+    <script>
+        var trace1 = {
+  x: apprehensions.Year,
+  y: apprehensions.yConst,
+  mode: 'markers',
+  type: 'bar',
+  marker: {color:apprehensions.daColor,
+    
+}
+};
+
+var data = [trace1];
+var layout = {
+    
+}
+Plotly.newPlot('myDiv', data);
+    </script>
+
+</body>
+</html>

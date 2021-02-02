@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Polar</title>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+</head>
+
+<body>
+    <div><div id="myDiv"></div> 
+    <script src="./data/appre.json"></script>
+
+
+    <script>
+        var trace1 = {
+  x: apprehensions.theta,
+  r: apprehensions.Number,
+  mode: 'markers',
+  type: 'barpolar',
+  marker: {color:apprehensions.daColor
+}
+};
+
+
+var data = [trace1];
+
+Plotly.newPlot('myDiv', data);
+    </script>
+
+</body>
+</html>
