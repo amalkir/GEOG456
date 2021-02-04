@@ -11,26 +11,27 @@
 
 <body>
   <div id="myDiv1"></div> 
-  <div id="myTxtDiv"></div>
+  <div id="myTxtDiv">
   <p> These figures show the number of non-citizens apprehended in the US between 
     the years indicated,both at the US border by the CBP, and ICE administrative arrests,
     including ICE EROs and 287g.
     
     The data source is: https://www.dhs.gov/immigration-statistics/yearbook/2019/table33
   </p>
+</div>
 
   <div id="myDiv2"></div> 
     <script src="./data/appre.json"></script>
 <style>
     body {background-color: whitesmoke;}
-    h1{color:yellowgreen; font-style:normal; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:x-large;}
-    h2{color: yellowgreen;font-style:italic; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger;}
+    h1{color:blue; font-style:normal; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:x-large;}
+    h2{color: blue;font-style:italic; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger;}
     #myDiv2 {
         width: 80%;
         height: 100%;
     }
     #myTxtDiv {
-        width: 50%;
+        width: 80%;
         height: 100%;
     }
     #myDiv1 {
@@ -57,7 +58,8 @@ var layout = {
       family: 'Courier New, monospace',
       size: 30, color: 'orange'
     }
-}
+},
+plot_bgcolor: '#fff7bc'
 }; 
 
 var data = [trace1];
@@ -70,12 +72,15 @@ var data = [trace1];
   mode: 'markers',
   type: 'bar',
   marker: {color:apprehensions.daColor,
-    
-}
+  }
+  
 };
 
 var data2 = [trace2];
 var layout2 = {
+  yaxis: {
+    visible: false
+  },
     title: {text:'Apprehensions of non-citizens in the US 1925-2019',
     font: {
       family: 'Courier New, monospace',
