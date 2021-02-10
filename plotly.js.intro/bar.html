@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bar</title>
+    <title> Click Menu Bar</title>
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
 </head>
 
@@ -18,9 +18,7 @@
         width: 75%;
         height: 100%;
     }
-
-    
-    
+   
 </style>
 <body>
     <h1>Non-citizens apprehended from 1925-2019</h1>
@@ -30,14 +28,36 @@
 
 
     </style>
-    <div><div id="myDiv"></div> 
+    <div><div id="myDiv">
+
+        <button onclick="alert('hello')"> Click alert </button>
+        <button onclick="console.log('i was clicked')"> Click console </button>
+        <button onclick="myFunction()"> My function </button>
+        <button onclick="myFunction2()">Change Type  </button>
+<label for="mySelect">Select a year </label> 
+        <select id="mySelect" onchange="myQue(this.value)">
+            <option value="1925">1925</option>
+            <option value="1926">1926</option>
+            <option value="1927">1927</option>
+            <option value="1928">1928</option>
+            <option value="1929">1929</option>
+            <option value="1930">1930</option>
+            <option value="1931">1931</option>
+            <option value="1932">1932</option>
+            <option value="1933">1933</option>
+            <option value="1934">1934</option>
+        
+        </select>
+    </div> 
+
+
     <script src="./data/appre.json"></script>
 
 
     <script>
         var trace1 = {
   x: apprehensions.Year,
-  y: apprehensions.yConst,
+  y: apprehensions.Number,
   mode: 'markers',
   type: 'bar',
   marker: {color:apprehensions.daColor,
@@ -45,11 +65,35 @@
 }
 };
 
-var data = [trace1];
-var layout = {
-    
+myQue = function(aYear) {
+    trace1.y = [];
+    trace1.marker.color = [];
+for (i=0; i<apprehensions.Year.length; i++){
+    if (apprehensions.Year[i] == aYear) {
+        trace1.y.push(apprehensions.Number[i])
+        trace1.marker.color.push(apprehensions.daColor[i])
+    }
 }
-Plotly.newPlot('myDiv', data);
+makePlot ()
+}
+
+makePlot = function(){
+    data =[trace1];
+    Plotly.newPlot('myDiv', data);
+}
+
+
+var n = 1;
+        myFunction = function (){
+            console.log ("clicked " + n + "times")
+            n = n + 1
+        }
+        myFunction2 = function (){
+            if (data [0].type == 'bar'){data[0].type = 'scatter'}
+            else (data[0].type = 'bar')
+            Plotly.newPlot('myDiv', data);
+        }
+myQue ("1925")
     </script>
 
 </body>

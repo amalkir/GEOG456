@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Bar</title>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+</head>
+
+<style>
+
+    body { 
+        background-color:whitesmoke;
+    }
+    
+    #myDiv {
+        position: absolute;
+        width: 75%;
+        height: 100%;
+    }
+   
+</style>
+<body>
+    <h1>Non-citizens apprehended from 1925-2019</h1>
+    <style>
+        h1{text-align: left;
+        color:yellowgreen; font-style:oblique; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:x-large;};
+
+
+    </style>
+    <div><div id="myDiv">
+
+<input type="range" min= "0" max="95" value = "1" class="slider" oninput="mySlice(this.value)">
+    </div> 
+
+
+    <script src="./data/orden.json"></script>
+
+
+    <script>
+        var trace1 = {
+  x: apprehensions.Year,
+  y: apprehensions.Number,
+  mode: 'markers',
+  type: 'bar',
+  marker: {color:apprehensions.daColor,
+    
+}
+};
+
+var layout = {
+    xaxis: {
+        fixedrange: true, 
+        range: ["1925", "2020"]
+    }
+}
+
+mySlice = function (daValue) {
+    trace1.x = apprehensions.Year.slice (0,daValue)
+    trace1.y = apprehensions.Number.slice (0,daValue)
+    trace1.marker.color = apprehensions.daColor.slice (0,daValue)
+    makePlot()
+}
+
+makePlot = function(){
+    data =[trace1];
+    Plotly.newPlot('myDiv', data, layout);
+}
+
+
+var n = 1;
+        myFunction = function (){
+            console.log ("clicked " + n + "times")
+            n = n + 1
+        }
+        myFunction2 = function (){
+            if (data [0].type == 'bar'){data[0].type = 'scatter'}
+            else (data[0].type = 'bar')
+            Plotly.newPlot('myDiv', data);
+        }
+myQue ("1925")
+    </script>
+
+</body>
+</html>
