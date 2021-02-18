@@ -37,7 +37,7 @@ var uncIcon = L.icon ({
     popupAnchor: [0,0],
 });
 var customPopup = "UNC Well<br/><img src='https://static1.squarespace.com/static/57d17e77b8a79bfa4e31641d/t/58a22fd0bebafb516ad2404a/1487024089479/unc+well.png?format=1500w' width='100px'/>";
-var cherryPopup = "Cherry Blossoms<br/><img src='https://pbs.twimg.com/media/DW-c1u7VoAAafwx?format=jpg&name=4096x4096' width='100px'/>";
+var cherryPopup = "There is a cherry blossom here <br/><img src='https://pbs.twimg.com/media/DW-c1u7VoAAafwx?format=jpg&name=4096x4096' width='100px'/>";
 L.geoJSON(uncwell, { 
     pointToLayer: function (feature, latlng) { 
     return L.marker(latlng, {icon: uncIcon});}}) 
