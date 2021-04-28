@@ -1,0 +1,80 @@
+[
+  {
+    "Month": "Oct",
+    "Criminal.Arrests": 693,
+    "Pending.Arrests": 291,
+    "Immigration.Violence.Arrests": 129
+  },
+  {
+    "Month": "Nov",
+    "Criminal.Arrests": 606,
+    "Pending.Arrests": 298,
+    "Immigration.Violence.Arrests": 116
+  },
+  {
+    "Month": "Dec",
+    "Criminal.Arrests": 589,
+    "Pending.Arrests": 316,
+    "Immigration.Violence.Arrests": 96
+  },
+  {
+    "Month": "Jan",
+    "Criminal.Arrests": 713,
+    "Pending.Arrests": 293,
+    "Immigration.Violence.Arrests": 130
+  },
+  {
+    "Month": "Feb",
+    "Criminal.Arrests": 752,
+    "Pending.Arrests": 290,
+    "Immigration.Violence.Arrests": 193
+  },
+  {
+    "Month": "Mar",
+    "Criminal.Arrests": 597,
+    "Pending.Arrests": 299,
+    "Immigration.Violence.Arrests": 62
+  },
+  {
+    "Month": "Apr",
+    "Criminal.Arrests": 347,
+    "Pending.Arrests": 114,
+    "Immigration.Violence.Arrests": 5
+  },
+  {
+    "Month": "May",
+    "Criminal.Arrests": 402,
+    "Pending.Arrests": 191,
+    "Immigration.Violence.Arrests": 8
+  },
+  {
+    "Month": "June",
+    "Criminal.Arrests": 344,
+    "Pending.Arrests": 207,
+    "Immigration.Violence.Arrests": 8
+  },
+  {
+    "Month": "Jul",
+    "Criminal.Arrests": 443,
+    "Pending.Arrests": 213,
+    "Immigration.Violence.Arrests": 8
+  },
+  {
+    "Month": "Aug",
+    "Criminal.Arrests": 409,
+    "Pending.Arrests": 280,
+    "Immigration.Violence.Arrests": 3
+  },
+  {
+    "Month": "Sep",
+    "Criminal.Arrests": 405,
+    "Pending.Arrests": 282,
+    "Immigration.Violence.Arrests": 14
+  },
+  {
+    "Month": "Total",
+    "Criminal.Arrests": 6300,
+    "Pending.Arrests": 3074,
+    "Immigration.Violence.Arrests": 772
+  }
+]
